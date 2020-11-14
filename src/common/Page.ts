@@ -1135,7 +1135,7 @@ export class Page extends EventEmitter {
     let payload: { type: string; name: string; seq: number; args: unknown[] };
     try {
       payload = JSON.parse(event.payload);
-    } catch {
+    } catch (error) {
       // The binding was either called by something in the page or it was
       // called before our wrapper was initialized.
       return;
